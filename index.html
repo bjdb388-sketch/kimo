@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>من قلبي ليكي </title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+<div id="petals" aria-hidden="true"></div>
+
+<!-- 2. Password gate -->
+<section id="gate" aria-label="الدخول">
+  <div class="corner tl" data-rose></div><div class="corner br" data-rose></div>
+  <form id="gateForm" autocomplete="off">
+    <h1 data-bind="gate.title"></h1>
+    <p data-bind="gate.sub"></p>
+    <input id="pw" type="password" aria-label="كلمة السر" placeholder="كلمة السر" required>
+    <button type="submit" class="btn shimmer">فتح</button>
+    <p id="gateErr" role="alert"></p>
+  </form>
+</section>
+
+<main id="app" hidden>
+  <!-- 4. Welcome -->
+  <section id="welcome">
+    <div class="hero-rose" data-rose></div>
+    <h1 data-bind="welcome.title"></h1>
+    <p class="lead" data-bind="welcome.text"></p>
+    <a href="#first" class="hint">انزلي لسه بدري</a>
+  </section>
+
+  <!-- 5. First conversation -->
+  <section id="first">
+    <h2>بداية كل حاجه حلوة ف حياتي </h2>
+    <div class="tl reveal">
+      <span class="dot"></span>
+      <div id="firstDate" class="bigdate" aria-live="polite"></div>
+      <p class="msg" data-bind="first.message"></p>
+    </div>
+  </section>
+
+  <!-- 6. Blooming flower of reasons -->
+  <section id="reasons">
+    <h2>لمسة على كل بتلة</h2>
+    <p class="sub">كل بتلة حاجه حلوة بحبها فيكي </p>
+    <div class="flower" id="flower"><span class="core"></span></div>
+    <p id="reasonText" class="reason" aria-live="polite">اختاري بتلة…</p>
+  </section>
+
+  <!-- 7. Live counter -->
+  <section id="counter">
+    <h2>منذ أن بدأنا</h2>
+    <div class="cards reveal">
+      <div class="card"><b id="cD">0</b><small>يوم</small></div>
+      <div class="card"><b id="cH">0</b><small>ساعة</small></div>
+      <div class="card"><b id="cM">0</b><small>دقيقة</small></div>
+      <div class="card"><b id="cS">0</b><small>ثانية</small></div>
+    </div>
+  </section>
+
+  <!-- 9. Envelope -->
+  <section id="letter">
+    <h2>رسالة لكِ</h2>
+    <button id="env" class="env" aria-label="افتحي الرسالة">
+      <span class="flap"></span><span class="seal">❦</span>
+    </button>
+    <article id="paper" class="paper" aria-live="polite">
+      <p id="letterText" data-bind="letter.message"></p>
+    </article>
+  </section>
+
+  <!-- 10. Ending -->
+  <section id="ending">
+    <div class="hero-rose big" id="endRose"></div>
+    <h2 data-bind="ending.title"></h2>
+    <button id="endBtn" class="btn ghost">افتحي هديتك </button>
+    <p id="endMsg" class="final" data-bind="ending.hidden"></p>
+  </section>
+
+  <!-- 11. Signature -->
+  <footer id="sig"><span data-bind="signature"></span></footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
